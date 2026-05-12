@@ -3,7 +3,11 @@ import ToyCard from "./ToyCard";
 
 function ToyContainer() {
   return (
-    <div id="toy-collection">{/* Render the collection of ToyCards */}</div>
+    <div id="toy-collection">
+      {ViewTransitionTypeSet.map((toy) => (
+      <ToyCard key={toy.id} toy={toy} />
+      ))}
+    </div>
   );
 }
 
