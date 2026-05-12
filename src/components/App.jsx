@@ -18,6 +18,12 @@ function App() {
     setShowForm((showForm) => !showForm);
   }
 
+  function deleteToy(id) {
+  // remove toy from state
+  const updatedToys = toys.filter((toy) => toy.id !== id);
+  setToys(updatedToys);
+}
+
   return (
     <>
       <Header />
