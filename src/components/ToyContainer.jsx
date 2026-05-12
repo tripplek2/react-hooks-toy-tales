@@ -1,7 +1,7 @@
 import React from "react";
 import ToyCard from "./ToyCard";
 
-function ToyContainer() {
+function ToyContainer({ toys }) {
   return (
     <div id="toy-collection">
       {ViewTransitionTypeSet.map((toy) => (
