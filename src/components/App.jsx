@@ -8,7 +8,7 @@ function App() {
   const [toys,setToys] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/toys")
+    fetch("http://localhost:3001/toys")
       .then((res) => res.json())
       .then((data) => setToys(data));
 
