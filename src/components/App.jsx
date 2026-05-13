@@ -18,6 +18,10 @@ function App() {
     setShowForm((showForm) => !showForm);
   }
 
+  function addToy(newToy) {
+  setToys((prevToys) => [...prevToys, newToy]);
+}
+
   // remove toy from state after deletion
 function deleteToy(id) {
   const updatedToys = toys.filter((toy) => toy.id !== id);
@@ -36,7 +40,7 @@ function updateToy(updatedToy) {
   return (
     <>
       <Header />
-      {showForm ? <ToyForm /> : null}
+      {showForm ? <ToyForm addToy={addToy} /> : null}
       <div className="buttonContainer">
         <button onClick={handleClick}>Add a Toy</button>
       </div>

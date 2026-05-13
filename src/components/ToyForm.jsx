@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 function ToyForm({ addToy }) {
-  const [name, setNaame] = useState("");
+  const [name, setName] = useState("");
   const [image, setImage] = useState(""); 
 
   function handleSubmit(e) {
@@ -24,6 +24,9 @@ function ToyForm({ addToy }) {
       .then((res) => res.json())
       .then((data) => {
         addToy(data);
+
+        setName("");
+        setImage("");
       });
     }
   return (
@@ -36,7 +39,7 @@ function ToyForm({ addToy }) {
           placeholder="Enter a toy's name..."
           className="input-text"
           value={name}
-          onChange={(e) => setNaame(e.target.value)}
+          onChange={(e) => setName(e.target.value)}
         />
         <br />
         <input
