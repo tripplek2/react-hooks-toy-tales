@@ -1,6 +1,8 @@
 import React from "react";
 import ToyCard from "./ToyCard";
 
+
+
 function ToyContainer({ toys, deleteToy, updateToy }) {
   return (
     <div id="toy-collection">
@@ -10,6 +12,7 @@ function ToyContainer({ toys, deleteToy, updateToy }) {
       toy={toy} 
       deleteToy={deleteToy}
       updateToy={updateToy} />
+
       ))}
     </div>
   );

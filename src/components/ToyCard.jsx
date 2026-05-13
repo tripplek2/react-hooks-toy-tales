@@ -1,5 +1,6 @@
 import React from "react";
 
+
 function ToyCard({ toy, deleteToy, updateToy }) {
 
   // function to handle delete click
@@ -28,6 +29,7 @@ function ToyCard({ toy, deleteToy, updateToy }) {
       });
   }
 
+
   return (
     <div className="card" data-testid="toy-card">
       <h2>{toy.name}</h2>
@@ -37,8 +39,11 @@ function ToyCard({ toy, deleteToy, updateToy }) {
         className="toy-avatar"
       />
       <p>{toy.likes} Likes </p>
+
+    
       <button className="like-btn" onClick={handleLike}>Like {"<3"}</button>
       <button className="del-btn" onClick={handleDelete}>Donate to GoodWill</button>
+
     </div>
   );
 }

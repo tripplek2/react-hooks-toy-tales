@@ -40,11 +40,13 @@ function updateToy(updatedToy) {
       <div className="buttonContainer">
         <button onClick={handleClick}>Add a Toy</button>
       </div>
+
       <ToyContainer 
         toys={toys} 
         deleteToy={deleteToy}
         updateToy={updateToy} 
       />
+
     </>
   );
 }
