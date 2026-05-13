@@ -18,24 +18,35 @@ function App() {
     setShowForm((showForm) => !showForm);
   }
 
-  function addToy(newToy) {
-  setToys([...toys, newToy]);
+  // remove toy from state after deletion
+function deleteToy(id) {
+  const updatedToys = toys.filter((toy) => toy.id !== id);
+  setToys(updatedToys);
 }
 
-  function deleteToy(id) {
-  // remove toy from state
-  const updatedToys = toys.filter((toy) => toy.id !== id);
+// update a single toy in state
+function updateToy(updatedToy) {
+  const updatedToys = toys.map((toy) =>
+    toy.id === updatedToy.id ? updatedToy : toy
+  );
+
   setToys(updatedToys);
 }
 
   return (
     <>
       <Header />
-      {showForm ? <ToyForm addToy={addToy} /> : null}
+      {showForm ? <ToyForm /> : null}
       <div className="buttonContainer">
         <button onClick={handleClick}>Add a Toy</button>
       </div>
-      <ToyContainer toys={toys} deleteToy={deleteToy} />
+
+      <ToyContainer 
+        toys={toys} 
+        deleteToy={deleteToy}
+        updateToy={updateToy} 
+      />
+
     </>
   );
 }
